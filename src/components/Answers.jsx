@@ -1,4 +1,4 @@
-import { useRef } from "react";
+ import { useRef } from "react";
 
 export default function Answers({answers, 
         selectedAnswer, 
@@ -29,7 +29,12 @@ export default function Answers({answers,
           <li key={answer} className="answer">
             <button 
               onClick={() => onSelect(answer)} 
-              className= {cssClasses}>{answer}</button>
+              className= {cssClasses}
+              disabled = {answerState !== ''}
+            >
+              {answer}
+
+            </button>
           </li>
         )
       })}
